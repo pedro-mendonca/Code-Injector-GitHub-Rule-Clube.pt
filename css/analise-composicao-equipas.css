@@ -11,11 +11,11 @@
 :root {
 	/* Verde rgb(0,128,0). */
 	--cor-clube: 0,128,0;
-	--cor-clube-muito-claro: rgba(var(--cor-clube),0.05);
+	--cor-clube-muito-claro: rgba(var(--cor-clube),0.02);
 	--cor-clube-claro: rgba(var(--cor-clube),0.1);
 	--cor-clube-medio: rgba(var(--cor-clube),0.5);
-	--cor-clube-escuro: rgba(var(--cor-clube),0.9);
-	--cor-clube-muito-escuro: rgba(var(--cor-clube),0.95);
+	--cor-clube-escuro: rgba(var(--cor-clube),0.8);
+	--cor-clube-muito-escuro: rgba(var(--cor-clube),0.9);
 }
 
 /* Transição suave. */
@@ -87,7 +87,7 @@ div#Resultados.composicao-equipas table#tabela tr td.esconder {
 
 /* Realçar camisolas dos atletas que têm equipamento com nº e nome de camisola. */
 .composicao-equipas .atleta .camisola.existe {
-	background-color: var(--cor-clube-medio);
+	background-color: var(--cor-clube-escuro);
 	color: white;
 	text-align: center;
 	text-transform: uppercase;
