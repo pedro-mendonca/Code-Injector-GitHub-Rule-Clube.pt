@@ -1,5 +1,5 @@
 {
-	"name": "Personalização da webapp do Paço de Arcos Clube (clube.pt)",
+	"name": "Webapp do Paço de Arcos Clube (clube.pt)",
 	"author": "Pedro Mendonça",
 	"description": "Regra remota no GitHub para importar personalização da webextension Code Injector para a webapp do Paço de Arcos Clube",
 	"selector": "app\\.clube\\.pt",

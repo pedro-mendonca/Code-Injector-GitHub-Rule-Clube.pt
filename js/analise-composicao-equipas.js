@@ -1,5 +1,7 @@
 /**
  * JavaScript para a tabela Análise > Composição de Equipas.
+ *
+ * Documentação: https://github.com/pedro-mendonca/Code-Injector-GitHub-Rule-Clube.pt
  */
 
 // Verificar se é Composição de Equipas.
