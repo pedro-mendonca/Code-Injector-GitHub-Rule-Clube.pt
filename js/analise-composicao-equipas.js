@@ -10,6 +10,12 @@ $( "body div.body-content h3:contains('Composição de Equipas')" )
 	.siblings( 'div#Resultados' ).addClass( "composicao-equipas" )
 ;
 
+// Verificar se é Equipas da Época.
+$( "body div.body-content h3:contains('Equipas da Época')" )
+	// Adiciona classe 'equipas-epoca' ao resultado.
+	.siblings( 'div#tabela_wrapper' ).addClass( "equipas-epoca" )
+;
+
 // Atribuir classe 'cabecalho' ao cabeçalho da tabela.
 $( "div#Resultados.composicao-equipas table#tabela tbody tr" )
 	.first().addClass( "cabecalho" )
