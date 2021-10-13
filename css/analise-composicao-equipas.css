@@ -1,0 +1,25 @@
+/**
+ * CSS para a tabela Análise > Composição de Equipas.
+ */
+
+/* Importar Google Font. */
+@import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
+
+/* Realçar linhas de atletas. */
+div#Resultados.composicao-equipas table#tabela tr.atleta {
+	background-color: rgba(0,128,0,0.1);
+}
+
+/* Esconder colunas desnecessárias. */
+div#Resultados.composicao-equipas table#tabela tr td.esconder {
+	display: none;
+}
+
+/* Realçar camisolas dos atletas que têm equipamento com nº e nome de camisola. */
+.composicao-equipas .atleta .camisola.existe {
+	background-color: rgba(0,128,0,1.5);
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	font-family: 'Graduate', cursive;
+}
