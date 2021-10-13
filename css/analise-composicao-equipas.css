@@ -7,9 +7,76 @@
 /* Importar Google Font. */
 @import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
 
+:root {
+	/* Verde rgb(0,128,0). */
+	--cor-clube: 0,128,0;
+	--cor-clube-muito-claro: rgba(var(--cor-clube),0.05);
+	--cor-clube-claro: rgba(var(--cor-clube),0.1);
+	--cor-clube-medio: rgba(var(--cor-clube),0.5);
+	--cor-clube-escuro: rgba(var(--cor-clube),0.9);
+	--cor-clube-muito-escuro: rgba(var(--cor-clube),0.95);
+}
+
+/* Transição suave. */
+a div.card,
+a:hover div.card,
+div#tabela_wrapper.equipas-epoca table#tabela tbody tr td a div.card,
+div#tabela_wrapper.equipas-epoca table#tabela tbody tr td a:hover div.card {
+	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/* Cartões. */
+a div.card {
+	background-color: var(--cor-clube-muito-claro);
+}
+a:hover div.card {
+	background-color: var(--cor-clube-claro);
+}
+
+/* Fundos Bootstrap. */
+.bg-light {
+	background-color: var(--cor-clube-claro) !important;
+}
+
+
+/**
+ * Definições gerais de botões.
+ */
+a.btn.btn-outline-dark,
+button.btn.btn-outline-dark {
+	background-color: var(--cor-clube-claro);
+}
+a.btn.btn-outline-dark:hover,
+button.btn.btn-outline-dark:hover {
+	background-color: var(--cor-clube-escuro);
+}
+
+
+/**
+ * Equipas da Época.
+ */
+
+/* Realçar linhas de equipas. */
+div#tabela_wrapper.equipas-epoca table#tabela tbody tr td a div.card {
+	background-color: var(--cor-clube-claro);
+}
+div#tabela_wrapper.equipas-epoca table#tabela tbody tr td a:hover div.card {
+	background-color: var(--cor-clube-escuro);
+}
+
+
+/**
+ * Composição de Equipas.
+ */
+
+/* Cor geral das linhas. */
+div#Resultados.composicao-equipas table#tabela tr {
+	background-color: var(--cor-clube-muito-claro);
+}
+
 /* Realçar linhas de atletas. */
 div#Resultados.composicao-equipas table#tabela tr.atleta {
-	background-color: rgba(0,128,0,0.1);
+	background-color: var(--cor-clube-claro);
 }
 
 /* Esconder colunas desnecessárias. */
@@ -19,7 +86,7 @@ div#Resultados.composicao-equipas table#tabela tr td.esconder {
 
 /* Realçar camisolas dos atletas que têm equipamento com nº e nome de camisola. */
 .composicao-equipas .atleta .camisola.existe {
-	background-color: rgba(0,128,0,1.5);
+	background-color: var(--cor-clube-medio);
 	color: white;
 	text-align: center;
 	text-transform: uppercase;
