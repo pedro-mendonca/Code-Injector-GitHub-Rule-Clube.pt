@@ -6,32 +6,83 @@
  */
 
 /* Importar Google Font. */
-@import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Graduate&display=swap");
 
 :root {
+
 	/* Verde rgb(0,128,0). */
-	--cor-clube: 0,128,0;
-	--cor-clube-muito-claro: rgba(var(--cor-clube),0.02);
-	--cor-clube-claro: rgba(var(--cor-clube),0.1);
-	--cor-clube-medio: rgba(var(--cor-clube),0.5);
-	--cor-clube-escuro: rgba(var(--cor-clube),0.8);
-	--cor-clube-muito-escuro: rgba(var(--cor-clube),0.9);
+	--cor-clube: 0, 128, 0;
+	--cor-clube-muito-claro: rgba(var(--cor-clube), 0.02);
+	--cor-clube-claro: rgba(var(--cor-clube), 0.1);
+	--cor-clube-medio: rgba(var(--cor-clube), 0.5);
+	--cor-clube-escuro: rgba(var(--cor-clube), 0.8);
+	--cor-clube-muito-escuro: rgba(var(--cor-clube), 0.9);
 }
 
 /* Transição suave. */
 a div.card,
 a:hover div.card,
 div#tabela_wrapper.equipas-epoca table#tabela tbody tr td a div.card,
-div#tabela_wrapper.equipas-epoca table#tabela tbody tr td a:hover div.card {
-	transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+div#tabela_wrapper.equipas-epoca table#tabela tbody tr td a:hover div.card,
+.nav-link,
+.nav-link:hover {
+	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/**
+ * Geral.
+ */
+
+/* Cor de fundo. */
+body {
+	background-color: var(--cor-clube-muito-claro);
+}
+
+/* Navegação Bootstrap. */
+nav.navbar.navbar-dark.bg-dark {
+	background-color: var(--cor-clube-escuro) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-nav .active > .nav-link,
+.navbar-dark .navbar-nav .nav-link.active,
+.navbar-dark .navbar-nav .nav-link.show,
+.navbar-dark .navbar-nav .show > .nav-link {
+	color: white;
+}
+
+nav.navbar-dark .navbar-nav .nav-link:hover {
+	opacity: 80%;
+}
+
+nav.navbar div.navbar-collapse div.dropdown-menu {
+	background-color: white !important;
+}
+
+nav.navbar div.navbar-collapse a.dropdown-item:hover {
+	background-color: var(--cor-clube-claro);
+}
+
+/* Ligações. */
+a {
+	color: var(--cor-clube-escuro);
+}
+
+a:hover {
+	color: var(--cor-clube-muito-escuro);
 }
 
 /* Cartões. */
 a div.card {
 	background-color: var(--cor-clube-muito-claro);
 }
+
 a:hover div.card {
 	background-color: var(--cor-clube-claro);
+}
+
+div.card {
+	//background-color: var(--cor-clube-muito-claro);
 }
 
 /* Fundos Bootstrap. */
@@ -47,6 +98,7 @@ a.btn.btn-outline-dark,
 button.btn.btn-outline-dark {
 	background-color: var(--cor-clube-claro);
 }
+
 a.btn.btn-outline-dark:hover,
 button.btn.btn-outline-dark:hover {
 	background-color: var(--cor-clube-escuro);
@@ -61,6 +113,7 @@ button.btn.btn-outline-dark:hover {
 div#tabela_wrapper.equipas-epoca table#tabela tbody tr td a div.card {
 	background-color: var(--cor-clube-claro);
 }
+
 div#tabela_wrapper.equipas-epoca table#tabela tbody tr td a:hover div.card {
 	background-color: var(--cor-clube-escuro);
 }
@@ -91,5 +144,5 @@ div#Resultados.composicao-equipas table#tabela tr td.esconder {
 	color: white;
 	text-align: center;
 	text-transform: uppercase;
-	font-family: 'Graduate', cursive;
+	font-family: "Graduate", cursive;
 }
