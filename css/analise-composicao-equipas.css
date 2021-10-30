@@ -158,6 +158,6 @@ div#Resultados.composicao-equipas table#tabela tr td.esconder {
 /* Tamanho de texto dos botões em ecrãs pequenos. */
 @media only screen and (max-width: 600px) {
 	div.botao-estatisticas div.card div.card-body {
-		font-size: 0.7rem;
+		font-size: 0.8rem;
 	}
 }
