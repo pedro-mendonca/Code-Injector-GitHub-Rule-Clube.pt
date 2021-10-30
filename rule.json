@@ -6,6 +6,13 @@
 	"onLoad": true,
 	"code": {
 		"js": "js/analise-composicao-equipas.js",
-		"css": "css/analise-composicao-equipas.css"
+		"css": "css/analise-composicao-equipas.css",
+		"files": [
+			{
+				"path": "https://use.fontawesome.com/releases/v5.15.0/css/all.css",
+				"type": "remote",
+				"ext": "css"
+			}
+		]
 	}
 }
