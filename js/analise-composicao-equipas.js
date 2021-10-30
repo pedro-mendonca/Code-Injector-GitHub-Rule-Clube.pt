@@ -2,7 +2,7 @@
  * JavaScript para a tabela Análise > Composição de Equipas.
  *
  * Documentação: https://github.com/pedro-mendonca/Code-Injector-GitHub-Rule-Clube.pt
- * Compatível com a webapp Clube.pt v.06102021.1632.
+ * Compatível com a webapp Clube.pt v.29102021.1508.
  */
 
 // Verificar se é Composição de Equipas.
@@ -126,14 +126,16 @@ function paginaEstatistica () {
 		'L3C': '3 Pts <i class="fa fa-check" style="color: green;"></i>',
 		'RD': 'Ressalt. Defens.',
 		'AST': 'Assist.',
-		'RB': 'Roubo <i class="fas fa-basketball-ball" style="color: green;"></i>', /* Font Awesome 5. */
+		'RB': 'Roubo Bola',
+		// 'RB': 'Roubo <i class="fas fa-basketball-ball" style="color: green;"></i>', /* Font Awesome 5. */
 		'FC': 'Falta Comet.',
 		'LLT': '1 Pts <i class="fa fa-times" style="color: red;"></i>',
 		'L2T': '2 Pts <i class="fa fa-times" style="color: red;"></i>',
 		'L3T': '3 Pts <i class="fa fa-times" style="color: red;"></i>',
 		'RO': 'Ressalt. Ofens.',
 		'DL': 'Desarm. Lançam.',
-		'PB': 'Perda <i class="fas fa-basketball-ball" style="color: red;"></i>', /* Font Awesome 5. */
+		'PB': 'Perda Bola',
+		// 'PB': 'Perda <i class="fas fa-basketball-ball" style="color: red;"></i>', /* Font Awesome 5. */
 		'FS': 'Falta Sofrida',
 	};
 
