@@ -85,3 +85,65 @@ $( 'td.camisola' ).each(function () {
 	}
 
 });
+
+
+
+/**
+ * Estatísticas.
+ */
+// Verificar se cada camisola existe.
+/* <i class="fa fa-bar-chart fa-lg"></i>*/
+
+// Verificar se é página de estatísticas de jogo.
+$( "body div.body-content div.sub-header div.float-left h5:contains('Em Jogo') div#PlayersList" )
+	console.log( 'Página de estatísticas');
+	paginaEstatistica();
+;
+
+
+function paginaEstatistica () {
+	// Adiciona classe 'jogo-estatisticas' à tabela.
+	$( 'div#PlayersList' )
+		.closest( "div.row" )
+		.addClass( "jogo-estatisticas" )
+	;
+
+	// Adiciona classe 'botao-estatisticas' aos botões de acções.
+	$( 'div.jogo-estatisticas > div:not(#PlayersList)' )
+		.children()
+		/*.css(
+			{
+				"backgroundColor": "yellow",
+				"color": "blue"
+			}
+		)*/
+		.addClass( "botao-estatisticas" )
+	;
+
+	var botoes = {
+		'LLC': '1 Pts <i class="fa fa-check" style="color: green;"></i>',
+		'L2C': '2 Pts <i class="fa fa-check" style="color: green;"></i>',
+		'L3C': '3 Pts <i class="fa fa-check" style="color: green;"></i>',
+		'RD': 'Ressalt. Defens.',
+		'AST': 'Assist.',
+		'RB': 'Roubo <i class="fas fa-basketball-ball" style="color: green;"></i>', /* Font Awesome 5. */
+		'FC': 'Falta Comet.',
+		'LLT': '1 Pts <i class="fa fa-times" style="color: red;"></i>',
+		'L2T': '2 Pts <i class="fa fa-times" style="color: red;"></i>',
+		'L3T': '3 Pts <i class="fa fa-times" style="color: red;"></i>',
+		'RO': 'Ressalt. Ofens.',
+		'DL': 'Desarm. Lançam.',
+		'PB': 'Perda <i class="fas fa-basketball-ball" style="color: red;"></i>', /* Font Awesome 5. */
+		'FS': 'Falta Sofrida',
+	};
+
+	$( 'div.botao-estatisticas div.card-body' ).each( function() {
+		// Obter html do botão.
+		var html = $(this).html();
+		// Eliminar espaços em branco e quebras de linha.
+		var trimhtml = html.trim();
+		// Definir nova legenda do botão.
+		$( this ).html( botoes[trimhtml] );
+	} );
+
+}
