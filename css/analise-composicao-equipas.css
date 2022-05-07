@@ -182,6 +182,33 @@ div.painel-score div.periodo {
 	font-size: 1.5rem;
 	line-height: 1.5rem;
 }
+div.painel-score div.team-posicao {
+    font-size: 0.8rem;
+}
 div.painel-score {
 	flex-direction: row;
+}
+
+/* Esconder tempo e pontuações originais. */
+div#chrono > div:not(#chronoButton),
+div#chrono div#score {
+	display: none;
+}
+
+/* Botões de acção e paragem de jogo. */
+div#chrono div#playPause .btn {
+	padding: 1rem;
+	font-size: 1.5rem;
+	line-height: 1.5rem;
+}
+
+/* Transição da interação no painel. */
+div.painel-score {
+	transition: all .15s ease-in-out;
+}
+div.painel-score div.team-posicao.posicao-local:before {
+	content: 'Local';
+}
+div.painel-score div.team-posicao:not(.posicao-local):before {
+	content: 'Visitante';
 }

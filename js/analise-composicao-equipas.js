@@ -155,30 +155,31 @@ function paginaEstatistica() {
 	<div class="row painel-row justify-content-center p-0 m-0">
 		<div class="row col-12 col-sm-10 col-md-8 col-lg-6 painel-score justify-content-center m-3 p-2 card action bg-light text-center">
 			<div class="col team1">
-			<div class="row">
-				<div class="col-12 team-name font-weight-bold h-25 d-inline-block">Paço de Arcos</div>
-				<div class="col-12 team-escalao h-25 d-inline-block"></div>
-				<div class="col-12 team-score font-weight-bold h-50 d-inline-block">XX</div>
-			</div>
+				<div class="row d-inline-block">
+					<div class="col-12 h-25 d-inline-block team-posicao posicao-local"></div>
+					<div class="col-12 h-25 d-inline-block team-name font-weight-bold">Paço de Arcos</div>
+					<div class="col-12 h-25 d-inline-block team-escalao"></div>
+					<div class="col-12 h-25 d-inline-block team-score font-weight-bold">XX</div>
+				</div>
 			</div>
 			<div class="col timer align-self-center">
-			<div style="" class="row">
-				<div class="col-12 periodo justify-content-center font-weight-bold">P</div>
-				<div class="col-12 countdown-timer justify-content-center font-weight-bold">10:00</div>
-			</div>
-			</div>
-				<div class="col team2">
-				<div class="row h-auto d-inline-block">
-					<div class="col-12 team-name font-weight-bold h-25 d-inline-block">Adversário</div>
-					<div class="col-12 team-escalao h-25 d-inline-block"></div>
-					<div class="col-12 team-score font-weight-bold h-50 d-inline-block">XX</div>
+				<div style="" class="row">
+					<div class="col-12 periodo justify-content-center font-weight-bold">P</div>
+					<div class="col-12 countdown-timer justify-content-center font-weight-bold">10:00</div>
 				</div>
+			</div>
+			<div class="col team2">
+				<div class="row d-inline-block">
+					<div class="col-12 h-25 d-inline-block team-posicao"></div>
+					<div class="col-12 h-25 d-inline-block team-name font-weight-bold">Adversário</div>
+					<div class="col-12 h-25 d-inline-block team-escalao"></div>
+					<div class="col-12 h-25 d-inline-block team-score font-weight-bold">XX</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	*/
-	$( 'div#chrono' ).before( '<div class="row painel-row justify-content-center p-0 m-0"><div class="row col-12 col-sm-10 col-md-8 col-lg-6 painel-score justify-content-center m-3 p-2 card action bg-light text-center"><div class="col team1"><div class="row"><div class="col-12 team-name font-weight-bold h-25 d-inline-block">Paço de Arcos</div><div class="col-12 team-escalao h-25 d-inline-block"></div><div class="col-12 team-score font-weight-bold h-50 d-inline-block">XX</div></div></div><div class="col timer align-self-center"><div style="" class="row"><div class="col-12 periodo justify-content-center font-weight-bold">P</div><div class="col-12 countdown-timer justify-content-center font-weight-bold">10:00</div></div></div><div class="col team2"><div class="row h-auto d-inline-block"><div class="col-12 team-name font-weight-bold h-25 d-inline-block">Adversário</div><div class="col-12 team-escalao h-25 d-inline-block"></div><div class="col-12 team-score font-weight-bold h-50 d-inline-block">XX</div></div></div></div></div></div>' );
+	$( 'div#chrono' ).before( '<div class="row painel-row justify-content-center p-0 m-0"><div class="row col-12 col-sm-10 col-md-8 col-lg-6 painel-score justify-content-center m-3 p-2 card action bg-light text-center"><div class="col team1"><div class="row d-inline-block"><div class="col-12 h-25 d-inline-block team-posicao posicao-local"></div><div class="col-12 h-25 d-inline-block team-name font-weight-bold">Paço de Arcos</div><div class="col-12 h-25 d-inline-block team-escalao"></div><div class="col-12 h-25 dinlineblock team-score font-weight-bold">XX</div></div></div><div class="col timer align-self-center"><div style="" class="row"><div class="col-12 periodo justify-content-center font-weight-bold">P</div><div class="col-12 countdown-timer justify-content-center font-weight-bold">10:00</div></div></div><div class="col team2"><div class="row d-inline-block"><div class="col-12 h-25 d-inline-block team-posicao"></div><div class="col-12 h-25 d-inline-block team-name font-weight-bold">Adversário</div><div class="col-12 h-25 d-inline-block team-escalao"></div><div class="col-12 h-25 d-inline-block team-score font-weight-bold">XX</div></div></div></div></div>' );
 
 	// Capta nomes das equipas em <font>PAC<span>Adversário</font>.
 	var score = $( 'div#score font' ).html();
@@ -244,3 +245,9 @@ function calculaTempo() {
 function actualizar( origem, destino ) {
 	$( destino ).html( $( origem ).text() );
 }
+
+// Inverte a ordem da coluna e alterna a cor verde do fundo (Casa: verde / Fora: branco)
+$( 'div.painel-score' ).click( function() {
+	$( 'div.painel-score' ).toggleClass( 'flex-row-reverse bg-light' );
+	$( 'div.painel-score div.team-posicao' ).toggleClass( 'posicao-local' );
+})
