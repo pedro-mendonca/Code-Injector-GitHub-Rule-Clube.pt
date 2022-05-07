@@ -7,6 +7,7 @@
 
 /* Importar Google Font. */
 @import url("https://fonts.googleapis.com/css2?family=Graduate&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 :root {
 
@@ -163,6 +164,13 @@ div#Resultados.composicao-equipas table#tabela tr td.esconder {
 }
 
 /* Cor do tempo de jogo. */
-div#chrono div.countdown span.countdown-timer{
+div.painel-score div.countdown-timer{
 	color: rgb(var(--cor-clube));
+	font-family: 'Share Tech Mono', monospace;
+	font-size: 3rem;
+	letter-spacing: -0.25rem;
+	line-height: 3rem;
+}
+div.painel-score {
+	flex-direction: unset;
 }
