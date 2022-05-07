@@ -101,7 +101,7 @@ $( "body div.body-content div.sub-header div.float-left h5:contains('Em Jogo') d
 ;
 
 
-function paginaEstatistica () {
+function paginaEstatistica() {
 	// Adiciona classe 'jogo-estatisticas' à tabela.
 	$( 'div#PlayersList' )
 		.closest( "div.row" )
@@ -148,4 +148,24 @@ function paginaEstatistica () {
 		$( this ).html( botoes[trimhtml] );
 	} );
 
+	// Adiciona div de tempo decrescente.
+	$( 'div#chrono div:first-child b:last-child' ).after( '<div class="countdown ml-3"><strong>Restante: <span class="countdown-timer"></span></strong></div>' );
+
+	// Calcula tempo decrescente.
+	calculaTempo();
+
+	// Verifica se o tempo original foi alterado, recalcula.
+	$( 'span#timer span.valuesPartial' ).on('DOMSubtreeModified', function(){
+		calculaTempo();
+	});
+
+}
+
+function calculaTempo() {
+	var time = $( 'span#timer span.valuesPartial' ).text();
+	var time_split = time.split( ':' );
+	var segundos = 60 * parseInt( time_split[0] ) + parseInt( time_split[1] );
+	var segundos_restantes = 600 - segundos;
+	var tempo_restante_formatado = new Date( segundos_restantes * 1000 ).toISOString().substr( 14, 5 );
+	$( 'span.countdown-timer' ).html( tempo_restante_formatado );
 }

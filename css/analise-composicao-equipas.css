@@ -161,3 +161,8 @@ div#Resultados.composicao-equipas table#tabela tr td.esconder {
 		font-size: 0.7rem;
 	}
 }
+
+/* Cor do tempo de jogo. */
+div#chrono div.countdown span.countdown-timer{
+	color: rgb(var(--cor-clube));
+}
