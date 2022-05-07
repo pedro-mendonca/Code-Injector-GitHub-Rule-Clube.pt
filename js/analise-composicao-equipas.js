@@ -149,16 +149,85 @@ function paginaEstatistica() {
 	} );
 
 	// Adiciona div de tempo decrescente.
-	$( 'div#chrono' ).before( '<div class="row painel-row justify-content-center p-0 m-0"><div class="row col-12 col-sm-10 col-md-8 col-lg-6 painel-score justify-content-center m-3 p-3 card action bg-light text-center"><div class="row col-12 countdown-timer justify-content-center font-weight-bold">00:00</div><div class="row col-12 teams-row justify-content-center align-items-center font-weight-bold"><div class="row col-5 team-pac"><div class="col-12 team-name">Paço de Arcos</div><div class="col-12 team-score">XX</div></div><div class="row col-2 justify-content-center periodo">X</div><div class="row col-5 team-adversario"><div class="col-12 team-name">Adversário</div><div class="col-12 team-score">XX</div></div></div></div></div>' );
+	<div class="row painel-row justify-content-center p-0 m-0">
+
+	/*
+	<div class="row painel-row justify-content-center p-0 m-0">
+		<div class="row col-12 col-sm-10 col-md-8 col-lg-6 painel-score justify-content-center m-3 p-2 card action bg-light text-center">
+			<div class="col team1">
+			<div class="row">
+				<div class="col-12 team-name font-weight-bold h-25 d-inline-block">Paço de Arcos</div>
+				<div class="col-12 team-escalao h-25 d-inline-block"></div>
+				<div class="col-12 team-score font-weight-bold h-50 d-inline-block">XX</div>
+			</div>
+			</div>
+			<div class="col timer align-self-center">
+			<div style="" class="row">
+				<div class="col-12 periodo justify-content-center font-weight-bold">P</div>
+				<div class="col-12 countdown-timer justify-content-center font-weight-bold">10:00</div>
+			</div>
+			</div>
+				<div class="col team2">
+				<div class="row h-auto d-inline-block">
+					<div class="col-12 team-name font-weight-bold h-25 d-inline-block">Adversário</div>
+					<div class="col-12 team-escalao h-25 d-inline-block"></div>
+					<div class="col-12 team-score font-weight-bold h-50 d-inline-block">XX</div>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	*/
+	$( 'div#chrono' ).before( '<div class="row painel-row justify-content-center p-0 m-0"><div class="row col-12 col-sm-10 col-md-8 col-lg-6 painel-score justify-content-center m-3 p-2 card action bg-light text-center"><div class="col team1"><div class="row"><div class="col-12 team-name font-weight-bold h-25 d-inline-block">Paço de Arcos</div><div class="col-12 team-escalao h-25 d-inline-block"></div><div class="col-12 team-score font-weight-bold h-50 d-inline-block">XX</div></div></div><div class="col timer align-self-center"><div style="" class="row"><div class="col-12 periodo justify-content-center font-weight-bold">P</div><div class="col-12 countdown-timer justify-content-center font-weight-bold">10:00</div></div></div><div class="col team2"><div class="row h-auto d-inline-block"><div class="col-12 team-name font-weight-bold h-25 d-inline-block">Adversário</div><div class="col-12 team-escalao h-25 d-inline-block"></div><div class="col-12 team-score font-weight-bold h-50 d-inline-block">XX</div></div></div></div></div></div>' );
+
+	// Capta nomes das equipas em <font>PAC<span>Adversário</font>.
+	var score = $( 'div#score font' ).html();
+	var equipas = score.split(/<span.+<\/span>/g);
+	var equipa1 = equipas[0];
+	var equipa2 = equipas[1];
+	console.log( equipas );
+	$( 'div.team1 div.team-escalao' ).html( equipa1 );
+	$( 'div.team2 div.team-name' ).html( equipa2 );
+
+	// Calcula período.
+	calculaPeriodo();
 
 	// Calcula tempo decrescente.
 	calculaTempo();
+
+	// Calcula pontos equipa 1.
+	actualizar( 'div#score font span b:first-child', 'div.team1 div.team-score' );
+
+	// Calcula pontos equipa 2.
+	actualizar( 'div#score font span b:last-child', 'div.team2 div.team-score' );
+
+	// Verifica se o período original foi alterado, recalcula.
+	$( 'span#timer span.part' ).on('DOMSubtreeModified', function(){
+		calculaPeriodo();
+	});
 
 	// Verifica se o tempo original foi alterado, recalcula.
 	$( 'span#timer span.valuesPartial' ).on('DOMSubtreeModified', function(){
 		calculaTempo();
 	});
 
+	// Verifica se os pontos da equipa 1 foram alterados, recalcula.
+	$( 'div#score font span b:first-child' ).on('DOMSubtreeModified', function(){
+		actualizar( 'div#score font span b:first-child', 'div.team1 div.team-score' );
+	});
+
+	// Verifica se os pontos da equipa 2 foram alterados, recalcula.
+	$( 'div#score font span b:last-child' ).on('DOMSubtreeModified', function(){
+		actualizar( 'div#score font span b:last-child', 'div.team2 div.team-score' );
+	});
+
+}
+
+function calculaPeriodo() {
+	var periodo = $( 'span#timer span.part' ).text();
+	var periodo_formatado = periodo.replace( 'P', '' );
+	//console.log( periodo );
+	$( 'div.painel-score div.timer div.periodo' ).html( periodo_formatado );
 }
 
 function calculaTempo() {
@@ -170,4 +239,8 @@ function calculaTempo() {
 	//console.log( 'Segundos: ' + ( 60 * parseInt( time_split[0] ) ) );
 	//console.log( 'Faltam: ' + segundos_restantes );
 	$( 'div.countdown-timer' ).html( tempo_restante_formatado );
+}
+
+function actualizar( origem, destino ) {
+	$( destino ).html( $( origem ).text() );
 }

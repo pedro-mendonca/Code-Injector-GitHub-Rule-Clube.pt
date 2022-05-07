@@ -178,11 +178,10 @@ div.painel-score div.team-score {
 	line-height: 1.5rem;
 }
 div.painel-score div.periodo {
-	color: rgb(var(--cor-clube));
 	font-family: 'Share Tech Mono', monospace;
-	font-size: 1rem;
-	line-height: 1rem;
+	font-size: 1.5rem;
+	line-height: 1.5rem;
 }
 div.painel-score {
-	flex-direction: unset;
+	flex-direction: row;
 }
