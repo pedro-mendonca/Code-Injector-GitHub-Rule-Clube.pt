@@ -164,12 +164,24 @@ div#Resultados.composicao-equipas table#tabela tr td.esconder {
 }
 
 /* Cor do tempo de jogo. */
-div.painel-score div.countdown-timer{
+div.painel-score div.countdown-timer {
 	color: rgb(var(--cor-clube));
 	font-family: 'Share Tech Mono', monospace;
 	font-size: 3rem;
 	letter-spacing: -0.25rem;
 	line-height: 3rem;
+}
+div.painel-score div.team-score {
+	color: rgb(var(--cor-clube));
+	font-family: 'Share Tech Mono', monospace;
+	font-size: 1.5rem;
+	line-height: 1.5rem;
+}
+div.painel-score div.periodo {
+	color: rgb(var(--cor-clube));
+	font-family: 'Share Tech Mono', monospace;
+	font-size: 1rem;
+	line-height: 1rem;
 }
 div.painel-score {
 	flex-direction: unset;

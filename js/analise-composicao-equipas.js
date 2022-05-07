@@ -149,7 +149,7 @@ function paginaEstatistica() {
 	} );
 
 	// Adiciona div de tempo decrescente.
-	$( 'div#chrono' ).before( '<div class="row painel-row justify-content-center"><div class="row col-sm-8 col-md-6 painel-score justify-content-center m-3 p-3 card action bg-light text-center"><div class="row col-12 countdown-timer justify-content-center font-weight-bold">00:00</div><div class="row col-12 teams-row justify-content-center align-items-center"><div class="row col-5 team-pac"><div class="col-12 team-name">Paço de Arcos</div><div class="col-12 team-score">XX</div></div><div class="row col-2 justify-content-center">X</div><div class="row col-5 team-adversario"><div class="col-12 team-name">Adversário</div><div class="col-12 team-score">XX</div></div></div></div></div>' );
+	$( 'div#chrono' ).before( '<div class="row painel-row justify-content-center p-0 m-0"><div class="row col-12 col-sm-10 col-md-8 col-lg-6 painel-score justify-content-center m-3 p-3 card action bg-light text-center"><div class="row col-12 countdown-timer justify-content-center font-weight-bold">00:00</div><div class="row col-12 teams-row justify-content-center align-items-center font-weight-bold"><div class="row col-5 team-pac"><div class="col-12 team-name">Paço de Arcos</div><div class="col-12 team-score">XX</div></div><div class="row col-2 justify-content-center periodo">X</div><div class="row col-5 team-adversario"><div class="col-12 team-name">Adversário</div><div class="col-12 team-score">XX</div></div></div></div></div>' );
 
 	// Calcula tempo decrescente.
 	calculaTempo();
